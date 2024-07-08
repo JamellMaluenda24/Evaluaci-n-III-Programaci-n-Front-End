@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .btn-outline-primary {
+            margin-right: 10px;
+        }
+        .btn-primary {
+            background: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+        .form-text {
+            color: #6c757d;
+        }
+    </style>
+    <title>Estimación de Calorías Quemadas en Ejercicio</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Estimación de Calorías Quemadas en Ejercicio</h1>
+        <div class="mb-5">
+            <h2>¿Qué es la estimación de calorías quemadas en ejercicio?</h2>
+            <p>Es un cálculo que nos permite estimar cuántas calorías quema una persona al realizar actividad física, en este caso, caminar o correr.</p>
+            <h2>¿Para qué sirve?</h2>
+            <ul>
+                <li>Ayuda a las personas a entender el gasto energético de sus actividades.</li>
+                <li>Es útil para planificar rutinas de ejercicio y dietas.</li>
+                <li>Permite comparar la intensidad de diferentes actividades.</li>
+            </ul>
+        </div>
+        <form id="formCalorias">
+            <div class="mb-3">
+                <label for="peso" class="form-label">Peso (kg):</label>
+                <input type="number" class="form-control" id="peso" name="peso" min="1" max="120" required>
+                <small class="form-text">Peso debe estar entre 1 y 120 kg.</small>
+            </div>
+            <div class="mb-3">
+                <label for="minutos" class="form-label">Minutos a ejercitar:</label>
+                <input type="number" class="form-control" id="minutos" name="minutos" min="5" max="150" required>
+                <small class="form-text">Minutos a ejercitar deben estar entre 5 y 150.</small>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Actividad:</label>
+                <div>
+                    <input type="radio" class="btn-check" name="actividad" id="caminar" value="3.5" checked>
+                    <label class="btn btn-outline-primary" for="caminar">Caminar</label>
+
+                    <input type="radio" class="btn-check" name="actividad" id="correr" value="8.0">
+                    <label class="btn btn-outline-primary" for="correr">Correr</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Calcular Calorías</button>
+        </form>
+        <div id="contenedorAlerta" class="mt-3"></div>
+    </div>
+
+    <script src="assets/js/alertas.js"></script>
+    <script src="assets/js/formLogica.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
